@@ -1,4 +1,5 @@
-# Reference: https://2captcha.com/support/tickets/310146
+# Credit: this is the code from 2captcha support team
+# My personal Reference: https://2captcha.com/support/tickets/310146
 
 import re
 import time
