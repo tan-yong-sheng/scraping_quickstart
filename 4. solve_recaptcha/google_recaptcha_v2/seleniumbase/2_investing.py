@@ -65,10 +65,12 @@ try:
     driver.execute_script("document.getElementsByName('g-recaptcha-response')[0].value = arguments[0];", solu)
     iframe = driver.find_element(By.XPATH,
                                  "/html/body/div[1]/div[1]/div[2]/div/div/div/form/fieldset/section[3]/div/div/div/iframe")
+    # This method is used to identify a frame with the help of frame id and then switch the focus to that particular frame.
     driver.switch_to_frame(iframe)
     el = driver.find_element(By.ID, "recaptcha-token")
     driver.execute_script(f"arguments[0].setAttribute('value', '{solu}');", el)
     time.sleep(1)
+    # to move out the current frame to the page level
     driver.switch_to.default_content()
 
     script = """document.getElementById('sign-in-btn').removeAttribute('disabled');"""#Making the button visible
