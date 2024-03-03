@@ -1,12 +1,16 @@
 import re
 import time
 import requests
+import os
 from seleniumbase import Driver
 from selenium.webdriver.common.by import By
 
-my_key = "Your_API_key_2captcha"
-proxy1 = "xxxx:xxxx@xx.xxx.xx.xxx:xxxx"# YOUR PROXY
-driver = Driver(uc=True, headless=False, proxy=proxy1)
+
+api_key = os.getenv("2CAPTCHA_API_KEY")
+
+
+# proxy1 = "xxxx:xxxx@xx.xxx.xx.xxx:xxxx"# YOUR PROXY
+driver = Driver(uc=True, headless=False) #, proxy=proxy1)
 
 url = 'https://www.investingnote.com/users/sign_in'
 driver.get(url)
@@ -22,12 +26,12 @@ time.sleep(1)
 driver.find_element(By.ID, "user_password").send_keys('xxxxxx')
 
 try:
-    data = {"key": my_key,
+    data = {"key": api_key,
             "method": "userrecaptcha ",
             "googlekey": sitekey,
             "json": 1,
             "pageurl": url,
-            "proxy": proxy1,
+            # "proxy": proxy1,
             "proxytype": "HTTP",
             }
     response = requests.post(f"https://2captcha.com/in.php?", data=data)
@@ -35,7 +39,7 @@ try:
     s = response.json()["request"]
     time.sleep(20)
     while True:
-        solu = requests.get(f"https://2captcha.com/res.php?key={my_key}&action=get&json=1&id={s}").json()
+        solu = requests.get(f"https://2captcha.com/res.php?key={api_key}&action=get&json=1&id={s}").json()
         if solu["request"] == "CAPCHA_NOT_READY":
             print(solu["request"])
             time.sleep(10)
