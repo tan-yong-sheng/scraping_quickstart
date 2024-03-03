@@ -5,13 +5,14 @@
 
 # Welcome to quotes.toscrape.com tutorial's documentation!
 
+```{include} ../1. AJAX_API/i_scraping_via_requests_API.ipynb
+```
+
+
 ```{toctree}
 :caption: 'Contents:'
 :maxdepth: 2
+
+../1. AJAX_API/i_scraping_via_requests_API
+
 ```
-
-# Indices and tables
-
-- {ref}`genindex`
-- {ref}`modindex`
-- {ref}`search`

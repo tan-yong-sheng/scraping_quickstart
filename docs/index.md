@@ -5,13 +5,10 @@
 
 # Welcome to quotes.toscrape.com tutorial's documentation!
 
+
+
 ```{toctree}
 :caption: 'Contents:'
 :maxdepth: 2
+
 ```
-
-# Indices and tables
-
-- {ref}`genindex`
-- {ref}`modindex`
-- {ref}`search`
