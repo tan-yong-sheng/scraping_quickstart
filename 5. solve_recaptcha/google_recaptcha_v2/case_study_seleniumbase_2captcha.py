@@ -1,4 +1,4 @@
-# Credit: get t
+# Credit: solved by 2captcha's Team
 
 # Prerequisite:
 # 1. Buy 2Captcha credit at https://2captcha.com/?from=22013304 (Note: this is an affiliate link)
