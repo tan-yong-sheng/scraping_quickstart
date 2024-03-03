@@ -1,2 +1,7 @@
 Website: https://www.leboncoin.fr/
 - Question from: https://www.reddit.com/r/webscraping/comments/1b47qd5/comment/ksy5zd1/
+
+
+Website 2: https://axs.com/
+- Question from: https://www.reddit.com/r/webscraping/comments/10d0x5r/using_selenium_with_proxy_still_hit_bot_detection/
+- Suggested remedy: Cloudscraper
