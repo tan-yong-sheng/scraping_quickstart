@@ -1,5 +1,7 @@
 Further Reference: 
 
+1. Learn How to Develop Web Scrappers and scrape things at Massive Scale Using Lambdas Lab 18 with code with Selenium: https://www.youtube.com/watch?v=VoAKT00yZZk
+
 1. Web scraping using AWS Lambda and API Gateway:
 https://www.lucasamos.dev/articles/lambdaapigateway
 
