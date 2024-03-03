@@ -1,3 +1,8 @@
+# Credit: get t
+
+# Prerequisite:
+# 1. Buy 2Captcha credit at https://2captcha.com/?from=22013304 (Note: this is an affiliate link)
+
 import re
 import time
 import requests
@@ -5,15 +10,15 @@ import os
 from seleniumbase import Driver
 from selenium.webdriver.common.by import By
 
-
+# Set up credentials
 api_key = os.getenv("2CAPTCHA_API_KEY")
-
+login_page_url = "https://www.investingnote.com/users/sign_in"
+investingnote_username = os.getenv("INVESTINGNOTE_USERNAME")
+investingnote_password = os.getenv("INVESTINGNOTE_PASSWORD")
 
 # proxy1 = "xxxx:xxxx@xx.xxx.xx.xxx:xxxx"# YOUR PROXY
 driver = Driver(uc=True, headless=False) #, proxy=proxy1)
-
-url = 'https://www.investingnote.com/users/sign_in'
-driver.get(url)
+driver.get(login_page_url)
 time.sleep(5)
 
 src = driver.find_element(By.TAG_NAME, "iframe").get_attribute("src")
@@ -21,16 +26,16 @@ pattern = r'k=([^&]+)'
 result = re.search(pattern, src)
 sitekey = result.group(1)
 print("sitekey: ", sitekey)
-driver.find_element(By.ID, "user_login").send_keys('xxxxx')
+driver.find_element(By.ID, "user_login").send_keys(investingnote_username)
 time.sleep(1)
-driver.find_element(By.ID, "user_password").send_keys('xxxxxx')
+driver.find_element(By.ID, "user_password").send_keys(investingnote_password)
 
 try:
     data = {"key": api_key,
             "method": "userrecaptcha ",
             "googlekey": sitekey,
             "json": 1,
-            "pageurl": url,
+            "pageurl": login_page_url,
             # "proxy": proxy1,
             "proxytype": "HTTP",
             }
