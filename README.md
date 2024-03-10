@@ -4,20 +4,23 @@ This repository serves as a comprehensive introduction to web scraping technique
 
 ## Getting Started
 
-1. Clone the repository to your local machine:
+1. Clone the repository to your local machine by running this script on your terminal:
   ```bash
   git clone https://github.com/tan-yong-sheng/scraping-quickstart
   ```
 
-2. Rename the .env.sample file to .env.
+2. Run `cd scraping-quickstart` on your terminal
 
-3. In the .env file, add the required credentials for the following services:
+2. Rename the `.env.sample` file to `.env`.
+
+3. In the `.env` file, add the required credentials for the following services:
 
     - 2Captcha API key: Obtain your 2Captcha API key from https://2captcha.com/2captcha-api. This paid service helps you to bypass recaptcha.
     - Brightdata's proxy username, password, and hostname: Obtain your proxy at https://brightdata.com/ to rotate your IP address and reduce the possibility that you're detected as a scraping bot.
 
 
-## Content
+## Table of Contents
+
 This repository covers a wide range of topics, including:
 
 1. Scraping with APIs
