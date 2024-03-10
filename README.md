@@ -1,9 +1,3 @@
----
-title: Scraping Quickstart
-authors: [Tan Yong Sheng]
-date: "2024-03-11"
----
-
 (Note: part 8 - ensure scraped_data_quality haven't yet done for all 3 ipynb, especially sqlmodel...
 Perhaps use sqlalchemy is better)
 
