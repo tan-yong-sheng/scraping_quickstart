@@ -6,7 +6,8 @@ This repository serves as a comprehensive introduction to web scraping technique
 
 1. Clone the repository to your local machine:
   ```bash
-  git clone https://github.com/tan-yong-sheng/scraping-quickstart```
+  git clone https://github.com/tan-yong-sheng/scraping-quickstart
+  ```
 
 2. Rename the .env.sample file to .env.
 
