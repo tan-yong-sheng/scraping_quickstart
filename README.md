@@ -1,21 +1,37 @@
-# Simple Scraping Tutorial
+# Scraping Quickstart
 
-Read this blog for more info
+This repository serves as a comprehensive introduction to web scraping techniques, suitable for beginners and intermediate Python users. It provides a hands-on learning experience through a series of Jupyter Notebooks, guiding you through various scraping methods.
 
-This github repo mainly introduces some of the 
+## Getting Started
 
-It's suitable for beginners to explore some of the 
+1. Clone the repository to your local machine:
+  ```bash
+  git clone https://github.com/tan-yong-sheng/scraping-quickstart```
+
+2. Rename the .env.sample file to .env.
+
+3. In the .env file, add the required credentials for the following services:
+
+    - 2Captcha API key: Obtain your 2Captcha API key from https://2captcha.com/2captcha-api. This paid service helps you to bypass recaptcha.
+    - Brightdata's proxy username, password, and hostname: Obtain your proxy at https://brightdata.com/ to rotate your IP address and reduce the possibility that you're detected as a scraping bot.
 
 
+## Content
+This repository covers a wide range of topics, including:
 
-Here is the docs & tutorial to read: <docs link>
+1. Scraping with APIs
+2. 
+3. Handling JavaScript-rendered websites with headless browser
+4. 
+5. Bypassing anti-scraping measures
+6. Proxies and rotating IP addresses to prevent hitting rate limit
+7.
+8. 
 
-Scraping methodology
-- Scrape API with `requests`
-- Scrape static website with `requests` and `lxml`
-- Scrape dynamic website with `selenium`
+## Learning Resources
+For a more in-depth understanding of web scraping techniques, refer to the accompanying blog: [Insert Blog URL]. This blog provides detailed explanations, code samples, and additional resources to complement the Jupyter Notebooks.
 
-To run these jupyter notebook on 
-- `git clone https://github.com/tan-yong-sheng/scraping-quickstart`
-- rename the file `.env.sample` to `.env`
-- for the `.env` file, add the credentials that you might need to run the jupyter notebook
+## Contributing
+Contributions to this repository are welcome! If you have any suggestions, improvements, or additional examples, please feel free to open a pull request or submit an issue.
+
+Happy scraping!
