@@ -2,6 +2,8 @@ This is a work in progress
 
 Further Reference:
 
+1. How to Run a Python Docker Image on AWS Lambda https://www.youtube.com/watch?v=wbsbXfkv47A
+
 1. Run Selenium in AWS Lambda for UI testing https://cloudbytes.dev/snippets/run-selenium-in-aws-lambda-for-ui-testing
 
 
