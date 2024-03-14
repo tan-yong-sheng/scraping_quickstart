@@ -2,6 +2,10 @@ This is a work in progress
 
 Further Reference: 
 
+1. Deploy a Docker built Lambda function with AWS CDK https://dev.to/wesleycheek/deploy-a-docker-built-lambda-function-with-aws-cdk-fio
+
+2. How to Deploy a Python Lambda Using AWS CDK? https://dev.to/wesleycheek/deploy-a-docker-built-lambda-function-with-aws-cdk-fio
+
 1. Selenium Web Scraping Project From Scratch using Replit and AWS Lambda https://www.youtube.com/watch?v=FcW-AXsirBE
 
 1. Learn How to Develop Web Scrappers and scrape things at Massive Scale Using Lambdas Lab 18 with code with Selenium: https://www.youtube.com/watch?v=VoAKT00yZZk
