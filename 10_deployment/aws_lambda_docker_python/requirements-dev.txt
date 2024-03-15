@@ -1,2 +1,3 @@
 pytest==6.2.5
-awscli 
+awscli
+aws-cdk-lib
