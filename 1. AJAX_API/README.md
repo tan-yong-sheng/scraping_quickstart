@@ -1,3 +1,0 @@
-## What to take note:
-
-CSRF Token: ....
