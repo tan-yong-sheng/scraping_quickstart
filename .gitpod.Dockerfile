@@ -2,10 +2,10 @@
 
 # Reference: https://www.gitpod.io/docs/configure/workspaces/workspace-image
 
-FROM gitpod/workspace-python-3.10
+FROM gitpod/workspace-base
 
 # Install necessary packages
-RUN apt-get update && apt-get install -yq \
+RUN sudo install-packages \
         git \
         git-lfs \
         sudo \
