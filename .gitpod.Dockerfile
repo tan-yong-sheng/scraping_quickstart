@@ -4,6 +4,9 @@
 
 FROM gitpod/workspace-base
 
+# Set environment variable for NVM directory
+ENV NVM_DIR="$HOME/.nvm"
+
 # Install necessary packages
 RUN sudo install-packages \
         python3.10 \
@@ -18,8 +21,10 @@ RUN sudo install-packages \
 
 # Install nvm 
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | bash
-## install node js version 18, so that it is compatible with AWS CDK
-RUN nvm install v18.19.1 
+
+# Run the NVM initialization commands
+RUN [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+RUN [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Install AWS CLI v2: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
