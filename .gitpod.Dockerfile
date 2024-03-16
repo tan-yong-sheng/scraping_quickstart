@@ -11,7 +11,7 @@ RUN sudo install-packages \
         nodejs \
         curl \
         zip \
-        unzip \
+        unzip
 
 # Copy the requirements file into the container
 COPY requirements.txt .
