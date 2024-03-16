@@ -3,7 +3,6 @@
 # Reference: https://www.gitpod.io/docs/configure/workspaces/workspace-image
 
 FROM ubuntu:latest
-WORKDIR .
 
 RUN apt-get update && apt-get install -yq \
         git \
@@ -12,7 +11,8 @@ RUN apt-get update && apt-get install -yq \
         python3.10 \
         pip \
         nodejs \
-    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/*
+        curl \
+        && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/*
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
