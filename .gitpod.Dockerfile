@@ -6,6 +6,8 @@
 # You could use `gitpod/workspace-full` as well.
 FROM gitpod/workspace-full
 
+USER gitpod
+
 # Install python to this workspace
 RUN sudo apt-get -y install python3.10
 
