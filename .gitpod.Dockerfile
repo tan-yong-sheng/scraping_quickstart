@@ -4,14 +4,10 @@
 
 FROM gitpod/workspace-base
 
-# Set environment variable for NVM directory
-ENV NVM_DIR="$HOME/.nvm"
-
 # Install necessary packages
 RUN sudo install-packages \
         python3.10 \
         python3-pip \
-        nodejs \
         npm \
         git \
         git-lfs \
@@ -20,12 +16,10 @@ RUN sudo install-packages \
         unzip
 
 # Install nvm 
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | bash
-## Run the NVM initialization commands
-RUN sudo [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-RUN sudo [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-## Install nodejs version 18, to be compatible with AWS CDK which dropped support of nodejs version 12
-RUN sudo nvm install 18
+RUN bash -c 'VERSION="14.8.0" \
+    && source $HOME/.nvm/nvm.sh && nvm install $VERSION \
+    && nvm use $VERSION && nvm alias default $VERSION'
+RUN echo "nvm use default &>/dev/null" >> ~/.bashrc.d/51-nvm-fix
 
 # Install AWS CLI v2: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
