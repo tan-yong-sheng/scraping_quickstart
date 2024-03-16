@@ -6,6 +6,7 @@ FROM gitpod/workspace-base
 
 # Set environment variable for NVM directory
 ENV NVM_DIR="$HOME/.nvm"
+ENV NODEJS_VERSION=18
 
 # Install necessary packages
 RUN sudo install-packages \
@@ -19,11 +20,12 @@ RUN sudo install-packages \
         unzip
 
 # Install nvm 
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | bash
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
 # Run the NVM initialization commands
-ARG NODEJS_VERSION=18
 RUN [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 RUN [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
 RUN sudo nvm install $NODEJS_VERSION && nvm use $NODEJS_VERSION
 
 # Install AWS CLI v2: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
