@@ -1,12 +1,12 @@
 # Use another python version in Gitpod Workspace
 
 # Reference: https://www.gitpod.io/docs/configure/workspaces/workspace-image
+# Reference 2: https://simonemms.com/blog/2022/04/30/using-a-non-ubuntu-base-image-in-gitpod
 
 FROM gitpod/workspace-base
 
-# Set environment variable for NVM directory
-ENV NVM_DIR="$HOME/.nvm"
-ENV NODEJS_VERSION=18
+# Set environment variable for nodejs
+ENV NODE_VERSION=18
 
 # Install necessary packages
 RUN sudo install-packages \
@@ -20,13 +20,15 @@ RUN sudo install-packages \
         unzip
 
 # Install nvm 
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-
-# Run the NVM initialization commands
-RUN [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-RUN [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-RUN sudo nvm install $NODEJS_VERSION && nvm use $NODEJS_VERSION
+RUN curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | PROFILE=/dev/null bash \
+  && bash -c ". .nvm/nvm.sh \
+    && nvm install $NODE_VERSION \
+    && nvm alias default $NODE_VERSION \
+    && npm install -g typescript yarn node-gyp" \
+  && echo ". ~/.nvm/nvm-lazy.sh"  >> /home/gitpod/.bashrc.d/50-node
+# above, we are adding the lazy nvm init to .bashrc, because one is executed on interactive shells, the other for non-interactive shells (e.g. plugin-host)
+COPY --chown=gitpod:gitpod nvm-lazy.sh /home/gitpod/.nvm/nvm-lazy.sh
+ENV PATH=$PATH:/home/gitpod/.nvm/versions/node/v${NODE_VERSION}/bin
 
 # Install AWS CLI v2: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
