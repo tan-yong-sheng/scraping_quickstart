@@ -2,24 +2,17 @@
 
 # Reference: https://www.gitpod.io/docs/configure/workspaces/workspace-image
 
-FROM ubuntu:20.04
-
-# Set the timezone to avoid interactive prompts from tzdata
-ENV TZ=Asia/Kuala_Lumpur
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+FROM gitpod/workspace-python3.10
 
 # Install necessary packages
 RUN apt-get update && apt-get install -yq \
         git \
         git-lfs \
         sudo \
-        python3.10 \
-        python3-pip \
         nodejs \
         curl \
         zip \
         unzip \
-        tzdata \
         && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/*
 
 # Copy the requirements file into the container
