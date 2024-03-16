@@ -30,6 +30,3 @@ RUN sudo npm i -g aws-cdk
 COPY requirements.txt .
 # Install Python dependencies from requirements.txt
 RUN pip install -r requirements.txt
-
-
-
