@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -yq \
         curl \
         zip \
         unzip \
+        tzdata \
         && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/*
 
 COPY requirements.txt .
