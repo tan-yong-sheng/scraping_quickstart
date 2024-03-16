@@ -6,8 +6,8 @@
 # You could use `gitpod/workspace-full` as well.
 FROM gitpod/workspace-python-3.10
 
-# RUN pyenv install 3.10 \
-#   && pyenv global 3.10
+# Install nodejs to this workspace as well
+RUN apt-get -y install nodejs
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
@@ -18,6 +18,3 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
         && ./aws/install -i /usr/local/aws-cli -b /usr/local/bin \
         && rm -rf awscliv2.zip \
         && rm -rf ./aws
-
-# Install nodejs to this workspace as well
-RUN apt-get -y install nodejs
