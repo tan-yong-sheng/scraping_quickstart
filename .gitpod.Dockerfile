@@ -34,6 +34,13 @@ RUN curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh |
     && nvm use $NODE_VERSION \
     && npm i -g typescript@$TS_VERSION"
 
+# Install AWS CLI v2: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+        && unzip awscliv2.zip \
+        && sudo ./aws/install -i /usr/local/aws-cli -b /usr/local/bin \
+        && rm -rf awscliv2.zip \
+        && rm -rf ./aws
+
 # Install AWS CDK for Typescript
 ENV CDK_VERSION=2.1.0
 RUN curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | PROFILE=/dev/null bash \
