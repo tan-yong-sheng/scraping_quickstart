@@ -19,7 +19,9 @@ RUN sudo install-packages \
         zip \
         unzip
 
-# Install nvm 
+# Install nvm and node.js
+LABEL dazzle/layer=lang-node
+LABEL dazzle/test=tests/lang-node.yaml
 RUN curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | PROFILE=/dev/null bash \
   && bash -c ". .nvm/nvm.sh \
     && nvm install $NODE_VERSION \
