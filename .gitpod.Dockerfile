@@ -8,12 +8,10 @@ FROM gitpod/workspace-base
 RUN sudo install-packages \
         git \
         git-lfs \
-        sudo \
         nodejs \
         curl \
         zip \
         unzip \
-        && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/*
 
 # Copy the requirements file into the container
 COPY requirements.txt .
