@@ -12,21 +12,13 @@ ENV NODE_VERSION=18
 RUN sudo install-packages \
         python3.10 \
         python3-pip \
+        nodejs \
         npm \
         git \
         git-lfs \
         curl \
         zip \
         unzip
-
-# Install nvm and node.js
-LABEL dazzle/layer=lang-node
-LABEL dazzle/test=tests/lang-node.yaml
-RUN curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | PROFILE=/dev/null bash \
-  && bash -c ". .nvm/nvm.sh \
-    && nvm install $NODE_VERSION \
-    && nvm alias default $NODE_VERSION \
-    && npm install -g typescript yarn node-gyp" 
 
 # Install AWS CLI v2: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
