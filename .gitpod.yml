@@ -9,6 +9,9 @@ tasks:
       pip install -r requirements.txt
       npm i -g aws-cdk
       cd 10_deployment/aws_lambda_docker2 && npm install && cd ..
-      
-      
 
+      # Install AWS CLI v2: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip awscliv2.zip
+      sudo ./aws/install
+      rm -rf awscliv2.zip
