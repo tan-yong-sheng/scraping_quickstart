@@ -4,10 +4,10 @@
 # Reference 2: https://medium.com/@pidugusundeep5/installing-packages-with-apt-get-on-gitpod-a70f0c6b1cf4
 
 # You could use `gitpod/workspace-full` as well.
-FROM gitpod/workspace-full
+FROM gitpod/workspace-python-3.10
 USER gitpod
-RUN pyenv install 3.10 \
-    && pyenv global 3.10
+# RUN pyenv install 3.10 \
+#   && pyenv global 3.10
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
