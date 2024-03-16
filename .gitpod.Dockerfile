@@ -15,15 +15,15 @@ RUN sudo install-packages \
         zip \
         unzip
 
-# install AWS CDK
-RUN npm i -g aws-cdk
-
 # Install AWS CLI v2: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
         && unzip awscliv2.zip \
         && sudo ./aws/install -i /usr/local/aws-cli -b /usr/local/bin \
         && rm -rf awscliv2.zip \
         && rm -rf ./aws
+
+# install AWS CDK
+RUN sudo npm i -g aws-cdk
 
 # Copy the requirements file into the container
 COPY requirements.txt .
