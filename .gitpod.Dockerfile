@@ -1,8 +1,11 @@
 # Use another python version in Gitpod Workspace
 
 # Reference: https://www.gitpod.io/docs/introduction/languages/python
+# Reference 2: https://medium.com/@pidugusundeep5/installing-packages-with-apt-get-on-gitpod-a70f0c6b1cf4
+
 # You could use `gitpod/workspace-full` as well.
-FROM gitpod/workspace-python
+FROM gitpod/workspace-full
+USER gitpod
 RUN pyenv install 3.10 \
     && pyenv global 3.10
 
