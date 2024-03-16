@@ -4,15 +4,17 @@
 
 FROM ubuntu:20.04
 
+# Set the timezone to avoid interactive prompts from tzdata
 ENV TZ=Asia/Kuala_Lumpur
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+# Install necessary packages
 RUN apt-get update && apt-get install -yq \
         git \
         git-lfs \
         sudo \
         python3.10 \
-        pip \
+        python3-pip \
         nodejs \
         curl \
         zip \
@@ -20,7 +22,9 @@ RUN apt-get update && apt-get install -yq \
         tzdata \
         && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/*
 
+# Copy the requirements file into the container
 COPY requirements.txt .
+# Install Python dependencies from requirements.txt
 RUN pip install -r requirements.txt
 
 # Install AWS CLI v2: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
