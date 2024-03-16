@@ -9,5 +9,4 @@ image:
 
 tasks:
   - init: | 
-      npm i -g aws-cdk
-      cd ./10_deployment/aws_lambda_docker && npm install -g && cd ../..
+      cd ./10_deployment/aws_lambda_docker && npm install && cd ../..
