@@ -9,5 +9,4 @@ image:
 
 tasks:
   - init: |
-      nvm install 18
       cd ./10_deployment/aws_lambda_docker && sudo npm i -g && cd ../..
