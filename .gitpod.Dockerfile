@@ -3,6 +3,7 @@
 # Reference: https://www.gitpod.io/docs/configure/workspaces/workspace-image
 
 FROM ubuntu:latest
+WORKDIR .
 
 RUN apt-get update && apt-get install -yq \
         git \
