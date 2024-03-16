@@ -8,7 +8,7 @@ FROM gitpod/workspace-base
 RUN sudo install-packages \
         python3.10 \
         python3-pip \
-        node \
+        nodejs \
         npm \
         git \
         git-lfs \
