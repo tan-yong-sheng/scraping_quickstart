@@ -15,3 +15,6 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
         && sudo ./aws/install -i /usr/local/aws-cli -b /usr/local/bin \
         && rm -rf awscliv2.zip \
         && rm -rf ./aws
+
+# Install nodejs to this workspace as well
+RUN sudo apt-get -y install nodejs
