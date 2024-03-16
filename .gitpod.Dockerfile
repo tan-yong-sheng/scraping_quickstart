@@ -13,7 +13,6 @@ RUN sudo install-packages \
         python3-pip \
         nodejs \
         npm \
-        nvm \
         git \
         git-lfs \
         curl \
@@ -22,11 +21,10 @@ RUN sudo install-packages \
 
 # Install nvm 
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | bash
-
-# Run the NVM initialization commands
+## Run the NVM initialization commands
 RUN [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 RUN [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-# Install nodejs version 18, to be compatible with AWS CDK which dropped support of nodejs version 12
+## Install nodejs version 18, to be compatible with AWS CDK which dropped support of nodejs version 12
 RUN nvm install 18.19.1
 
 # Install AWS CLI v2: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
