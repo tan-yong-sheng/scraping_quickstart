@@ -5,3 +5,11 @@
 FROM gitpod/workspace-python
 RUN pyenv install 3.10 \
     && pyenv global 3.10
+
+RUN pip install -r requirements.txt
+
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+        && unzip awscliv2.zip \
+        && sudo ./aws/install -i /usr/local/aws-cli -b /usr/local/bin \
+        && rm -rf awscliv2.zip \
+        && rm -rf ./aws
