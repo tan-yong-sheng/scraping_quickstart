@@ -6,6 +6,7 @@ FROM gitpod/workspace-base
 
 # Install necessary packages
 RUN sudo install-packages \
+        python3-pip \
         git \
         git-lfs \
         nodejs \
