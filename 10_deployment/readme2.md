@@ -8,43 +8,46 @@ Reference:
 
 -----
 
-1. `mkdir aws_lambda_docker` 
+1. Create an Aws user with programmatic access: [https://www.simplified.guide/aws/iam/create-programmatic-access-user](https://www.simplified.guide/aws/iam/create-programmatic-access-user)
 
-2. 
+- and then, create aws access key id, aws secret access key, and put as ENVIRONMENT VARIABLE
 
-```bash
-cd aws_lambda_docker
-```
+2. install AWS CLI: [https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
-3. 
+3. install AWS CDK: `npm install -g aws-cdk`
 
-```bash
-cdk init app --language typescript # use typescript for this cdk application
-``` 
+4. `mkdir aws_lambda_docker` 
 
-4. write the handler
+5. ```cd aws_lambda_docker```
+
+6. Use typescript for CDK application
+
+```cdk init app --language typescript``` 
+
+7. write the handler
 
 
-5. (Optional) run it locally on localhost
+8. (Optional) run it locally on localhost
 `cd image`
 `docker build -t `
 
-6. stack.ts
+9. stack.ts
 
-add type script to define aws service you want
+add typescript to define aws service you want
 
 
-7. set up AWS cli
+10. set up AWS cli
 
 `aws configure`
 
 
-Create aws access key id, aws secret access key
 
 8. Check if AWS cli is configured properly
 
 `aws sts get-caller-identity`
 
+
+9.
 
 ---
 
