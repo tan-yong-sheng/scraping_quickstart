@@ -19,8 +19,10 @@ RUN sudo install-packages \
 # Install nvm 
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | bash \
         && export NVM_DIR="$HOME/.nvm" \
-RUN [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-RUN [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # this loads nvm bash_completion
+        # This loads nvm
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
+        # this loads nvm bash_completion
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 RUN nvm install v18.19.1 # install node js version 18, so that it is compatible with AWS CDK
 
 # Install AWS CLI v2: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
