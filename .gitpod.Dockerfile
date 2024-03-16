@@ -13,6 +13,7 @@ RUN sudo install-packages \
         python3-pip \
         nodejs \
         npm \
+        nvm \
         git \
         git-lfs \
         curl \
