@@ -2,7 +2,7 @@
 
 # Reference: https://www.gitpod.io/docs/configure/workspaces/workspace-image
 
-FROM ubuntu:latest
+FROM ubuntu:20.04
 
 RUN apt-get update && apt-get install -yq \
         git \
