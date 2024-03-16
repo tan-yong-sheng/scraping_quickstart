@@ -10,6 +10,7 @@ RUN sudo install-packages \
         git \
         git-lfs \
         nodejs \
+        npm \
         curl \
         zip \
         unzip
