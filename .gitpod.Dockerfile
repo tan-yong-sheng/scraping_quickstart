@@ -3,8 +3,7 @@
 # Reference: https://www.gitpod.io/docs/introduction/languages/python
 # Reference 2: https://medium.com/@pidugusundeep5/installing-packages-with-apt-get-on-gitpod-a70f0c6b1cf4
 
-# You could use `gitpod/workspace-full` as well.
-FROM gitpod/workspace-full
+FROM gitpod/workspace-base
 
 USER gitpod
 
