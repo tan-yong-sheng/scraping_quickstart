@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -yq \
         pip \
         nodejs \
         curl \
+        zip \
+        unzip \
         && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/*
 
 COPY requirements.txt .
