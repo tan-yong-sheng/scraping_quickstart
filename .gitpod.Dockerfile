@@ -2,6 +2,9 @@
 
 # Reference: https://www.gitpod.io/docs/configure/workspaces/workspace-image
 
+ENV TZ=Asia/Kuala_Lumpur
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 FROM ubuntu:20.04
 
 RUN apt-get update && apt-get install -yq \
