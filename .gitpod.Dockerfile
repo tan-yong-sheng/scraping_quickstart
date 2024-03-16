@@ -9,7 +9,9 @@ RUN apt-get update && apt-get install -yq \
         git-lfs \
         sudo \
         python3.10 \
-        nodejs
+        pip \
+        nodejs \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/*
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
