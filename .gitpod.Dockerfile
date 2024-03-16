@@ -1,17 +1,15 @@
 # Use another python version in Gitpod Workspace
 
-# Reference: https://www.gitpod.io/docs/introduction/languages/python
-# Reference 2: https://medium.com/@pidugusundeep5/installing-packages-with-apt-get-on-gitpod-a70f0c6b1cf4
+# Reference: https://www.gitpod.io/docs/configure/workspaces/workspace-image
 
-FROM gitpod/workspace-base
+FROM ubuntu:latest
 
-USER gitpod
-
-# Install python to this workspace
-RUN sudo apt-get -y install python3.10
-
-# Install nodejs to this workspace as well
-RUN sudo apt-get -y install nodejs
+RUN apt-get update && apt-get install -yq \
+        git \
+        git-lfs \
+        sudo \
+        python3.10 \
+        nodejs
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
