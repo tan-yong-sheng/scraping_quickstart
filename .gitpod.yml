@@ -6,7 +6,10 @@
 
 tasks:
   - init: | 
+      # install required libraries in Python
       pip install -r requirements.txt
+
+      # install required aws libraries globally in Typescript
       npm i -g aws-cdk
       cd 10_deployment/aws_lambda_docker2 && npm install && cd ..
 
