@@ -65,6 +65,8 @@ RUN sudo apt-get update \
     xvfb \
     && sudo rm -rf /var/lib/apt/lists/*
 
+### update python pip package tool
+RUN python -m pip install --upgrade pip 
 
 # Part 3: Install Chrome browser on Docker, as it's required by Selenium
 # refer https://github.com/omkarcloud/gitpod-selenium/blob/master/Dockerfile
