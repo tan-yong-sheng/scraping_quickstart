@@ -1,5 +1,6 @@
 This is a work in progress
 
+new idea - deploy chrome driver as layer to aws lambda https://awstip.com/build-deploy-reusable-lambda-layers-using-aws-cdk-dd1fd47454c3
 
 [![AWS CDK application](https://i.stack.imgur.com/kgE0H.png)](https://stackoverflow.com/questions/67855703/the-difference-between-a-stack-and-construct-in-aws-cdk)
 
