@@ -7,6 +7,9 @@
 
 FROM gitpod/workspace-full
 
+# Part 1: Set up AWS Cloud Development Kit
+USER root
+
 # use python 3.10
 RUN pyenv install 3.10 \
     && pyenv global 3.10
@@ -21,6 +24,15 @@ RUN sudo install-packages \
         curl \
         zip \
         unzip
+
+# Install Chrome dependencies
+RUN apt-get update && apt-get install -y \
+    wget \
+    gnupg2 \
+    apt-transport-https \
+    ca-certificates \
+    software-properties-common \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install AWS CLI v2
 ## refer https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
@@ -37,3 +49,31 @@ RUN npm install -g aws-cdk
 COPY requirements.txt .
 # Install Python dependencies from requirements.txt
 RUN pip3 install -r requirements.txt
+
+# Part 2: Install Chrome browser on Docker, as it's required by Selenium
+# refer https://github.com/omkarcloud/gitpod-selenium/blob/master/Dockerfile
+
+## Install Chrome dependencies
+RUN apt-get update && apt-get install -y \
+    wget \
+    gnupg2 \
+    apt-transport-https \
+    ca-certificates \
+    software-properties-common \
+    && rm -rf /var/lib/apt/lists/*
+
+# Add the Google Chrome repository
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
+    && echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+
+# Install Google Chrome
+RUN apt-get update && apt-get install -y google-chrome-stable \
+    && rm -rf /var/lib/apt/lists/*
+
+USER gitpod
+
+# Add the Chrome as a path variable
+ENV CHROME_BIN=/usr/bin/google-chrome
+
+# Check if Chrome was installed successfully
+RUN google-chrome --version
