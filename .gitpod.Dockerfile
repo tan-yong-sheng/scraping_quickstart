@@ -3,7 +3,7 @@
 # Reference: https://www.gitpod.io/docs/configure/workspaces/workspace-image
 # Reference 2: https://simonemms.com/blog/2022/04/30/using-a-non-ubuntu-base-image-in-gitpod
 # Reference 3: https://nalth.is/custom-gitpod-images/
-
+# Reference 4: https://github.com/gitpod-io/gitpod/issues/7459
 
 FROM gitpod/workspace-base
 RUN gpg --keyserver keys.openpgp.org --recv-keys BC6B641A9D1AA1277130025ED9497100C5AC1B0F
@@ -22,9 +22,11 @@ RUN sudo install-packages \
 # Manually install NodeJS from nvm
 ENV NODE_VERSION=14.18.2
 RUN curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | PROFILE=/dev/null bash \
-    && bash -c ". .nvm/nvm.sh \
-        && nvm install $NODE_VERSION \
-        && nvm alias default $NODE_VERSION"
+    && bash -c ". .nvm/nvm.sh"
+RUN bash -c 'NODE_VERSION=$NODE_VERSION \
+    && source $HOME/.nvm/nvm.sh && nvm install $NODE_VERSION \
+    && nvm use $NODE_VERSION && nvm alias default $NODE_VERSION'
+RUN echo "nvm use default &>/dev/null" >> ~/.bashrc.d/51-nvm-fix
 
 # Install Typescript
 ENV TS_VERSION=4.4.4
