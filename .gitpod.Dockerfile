@@ -20,13 +20,11 @@ RUN sudo install-packages \
         unzip
 
 # Install Node.js from nvm
-ENV NODE_VERSION=14.18.2
-RUN curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | PROFILE=/dev/null bash \
-    && bash -c ". $HOME/.nvm/nvm.sh \
-    && nvm install $NODE_VERSION \
-    && nvm use $NODE_VERSION \
-    && nvm alias default $NODE_VERSION"
-RUN echo "nvm use default &>/dev/null" >> ~/.bashrc.d/51-nvm-fix
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash \
+    && . $HOME/.nvm/nvm.sh \
+    && nvm install 18 \
+    && nvm alias default 18 \
+    && nvm use default
 
 # Install Typescript
 ENV TS_VERSION=4.4.4
@@ -54,5 +52,5 @@ COPY requirements.txt .
 # Install Python dependencies from requirements.txt
 RUN pip install -r requirements.txt
 
-# Make node accessible from path
-# ENV PATH=$PATH:/home/gitpod/.nvm/versions/node/v${NODE_VERSION}/bin
+# Ensure commands below run in the correct environment
+RUN . $HOME/.nvm/nvm.sh && nvm use default && npm install -g yarn
