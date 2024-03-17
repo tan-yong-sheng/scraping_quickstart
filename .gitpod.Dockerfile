@@ -19,13 +19,13 @@ RUN sudo install-packages \
         zip \
         unzip
 
-# Manually install NodeJS from nvm
+# Install Node.js from nvm
 ENV NODE_VERSION=14.18.2
 RUN curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | PROFILE=/dev/null bash \
-    && bash -c ". .nvm/nvm.sh"
-RUN bash -c 'NODE_VERSION=$NODE_VERSION \
-    && source $HOME/.nvm/nvm.sh && nvm install $NODE_VERSION \
-    && nvm use $NODE_VERSION && nvm alias default $NODE_VERSION'
+    && bash -c ". $HOME/.nvm/nvm.sh \
+    && nvm install $NODE_VERSION \
+    && nvm use $NODE_VERSION \
+    && nvm alias default $NODE_VERSION"
 RUN echo "nvm use default &>/dev/null" >> ~/.bashrc.d/51-nvm-fix
 
 # Install Typescript
@@ -55,4 +55,4 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Make node accessible from path
-ENV PATH=$PATH:/home/gitpod/.nvm/versions/node/v${NODE_VERSION}/bin
+# ENV PATH=$PATH:/home/gitpod/.nvm/versions/node/v${NODE_VERSION}/bin
