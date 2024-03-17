@@ -1,3 +1,4 @@
+jupyter
 requests
 lxml
 bs4
@@ -8,3 +9,4 @@ tqdm
 watermark
 seleniumbase
 PyMuPDF
+2captcha-python
