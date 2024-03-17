@@ -7,6 +7,24 @@
 image:
   file: .gitpod.Dockerfile
 
+# Run VNC on remote server
+## refer https://gist.github.com/nadvolod/73997a12e646e5c00bafb1b9c12fd7b1
+ports:
+  - port: 3000
+    onOpen: open-browser
+    visibility: public
+    name: Website
+    description: Preview of Website
+  - port: 5900
+    onOpen: ignore
+    name: VNC
+    description: VNC Server
+  - port: 6080
+    onOpen: open-browser
+    visibility: public
+    name: VNC
+    description: VNC Viewer
+
 tasks:
   - init: |
       cd ./10_deployment/aws_lambda_docker && npm install && cd ../..

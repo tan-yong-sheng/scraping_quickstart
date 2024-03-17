@@ -11,7 +11,7 @@ from seleniumbase import Driver
 from selenium.webdriver.common.by import By
 
 # Set up credentials
-api_key = os.getenv("2CAPTCHA_API_KEY")
+api_key = os.getenv("CAPTCHA_API_KEY")
 login_page_url = "https://www.investingnote.com/users/sign_in"
 investingnote_username = os.getenv("INVESTINGNOTE_USERNAME")
 investingnote_password = os.getenv("INVESTINGNOTE_PASSWORD")

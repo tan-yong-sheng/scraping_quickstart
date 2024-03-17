@@ -4,8 +4,11 @@
 # Reference 2: https://simonemms.com/blog/2022/04/30/using-a-non-ubuntu-base-image-in-gitpod
 # Reference 3: https://github.com/gitpod-io/gitpod/issues/7459
 # Reference 4: Install chrome broswer on Docker to use Selenium https://github.com/omkarcloud/gitpod-selenium
+# Reference 5: Install VNC on gitpod https://gist.github.com/nadvolod/73997a12e646e5c00bafb1b9c12fd7b1
 
-FROM gitpod/workspace-full
+
+# could use workspace-full and delete Part 2 if you don't need UI interface for Chrome browser
+FROM gitpod/workspace-full-vnc 
 
 # Part 1: Set up AWS Cloud Development Kit
 
@@ -42,7 +45,28 @@ COPY requirements.txt .
 ## Install Python dependencies from requirements.txt
 RUN pip3 install -r requirements.txt
 
-# Part 2: Install Chrome browser on Docker, as it's required by Selenium
+
+# Part 2: install depencies for VNC
+RUN bash -c ". /home/gitpod/.sdkman/bin/sdkman-init.sh && \
+    sdk install java 17.0.3-ms && \
+    sdk default java 17.0.3-ms"
+
+RUN sudo apt-get update \
+    && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    libgtk2.0-0 \
+    libgtk-3-0 \
+    libnotify-dev \
+    libgconf-2-4 \
+    libnss3 \
+    libxss1 \
+    libasound2 \
+    libxtst6 \
+    xauth \
+    xvfb \
+    && sudo rm -rf /var/lib/apt/lists/*
+
+
+# Part 3: Install Chrome browser on Docker, as it's required by Selenium
 # refer https://github.com/omkarcloud/gitpod-selenium/blob/master/Dockerfile
 
 ## Install Chrome dependencies
