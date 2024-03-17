@@ -6,10 +6,27 @@ new idea - deploy chrome driver as layer to aws lambda https://awstip.com/build-
 
 Further Reference:
 
-1. How to Run a Python Docker Image on AWS Lambda https://www.youtube.com/watch?v=wbsbXfkv47A
+Reference:
+1. Step 1 - Create an AWS user with programmatic access: https://www.simplified.guide/aws/iam/create-programmatic-access-user
+
+2. Step 2 - How to Run a Python Docker Image on AWS Lambda https://www.youtube.com/watch?v=wbsbXfkv47A
+
+3. AWS CDK and Python | Step by Step Tutorial
+https://d2yeaxazqu9ejn.cloudfront.net/2022/06/24/aws-cdk-and-python-step-by-step-tutorial/?amp=1
+
+4. YouTube Tutorial for AWS CDK: https://www.youtube.com/watch?v=D4Asp5g4fp8&t=3159s) -> aws iac generator: generate AWS CloudFormation template for existing resources, then use cdk migrate to transform it to the script... 
+
+5. How AWS is Making It Easier To Convert to IaC/CDK https://www.youtube.com/watch?v=zyT4y-rfu7s
+
+6. AWS IAM Core Concepts You NEED to Know https://www.youtube.com/watch?v=_ZCTvmaPgao
+
+7. Setting Up an AWS CDK Project with Minimum IAM Access: A Step-by-Step Guide https://www.linkedin.com/pulse/setting-up-aws-cdk-project-minimum-iam-access-guide-kundu/
+
+8. Multi Factor Authentication (MFA) With AWSCLI https://www.youtube.com/watch?v=mNfIh5tUVpg
+
+9. Understand AWS L1, L2, L3 construct https://medium.com/devops-techable/understand-constructs-in-aws-cdk-and-learn-how-to-build-your-first-l3-constructs-for-reusing-your-62e60b9a8da8
 
 1. Run Selenium in AWS Lambda for UI testing https://cloudbytes.dev/snippets/run-selenium-in-aws-lambda-for-ui-testing
-
 
 1. Automate Web Scraping Using Python, AWS Lambda, Amazon S3 and Amazon EventBridge CloudWatch https://medium.com/@vinodvidhole/automate-web-scraping-using-python-aws-lambda-amazon-s3-amazon-eventbridge-cloudwatch-c4c982c35fa7
 
@@ -46,13 +63,3 @@ However, take note that unzipped package size has to be less than 250MB to deplo
 
 1. Web scraping using AWS Lambda and API Gateway:
 https://www.lucasamos.dev/articles/lambdaapigateway
-
----
-
-Steps to start
-
-1. Install serverless: https://www.serverless.com/framework/docs/getting-started
-
-`npm install -g serverless`
-
-This helps us to easily deploy to AWS service.
