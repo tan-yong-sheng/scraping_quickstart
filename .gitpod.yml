@@ -12,6 +12,7 @@ image:
 tasks:
   - name: Supervisor (VNC and noVNC)
     command: /usr/bin/supervisord --configuration /etc/supervisord.conf &
+  
   - name: Set cache path and warm it up
     init: |
       echo "build --repository_cache=/workspace/.cache/bazel-repo" >> /workspace/selenium/.bazelrc.local
@@ -41,5 +42,3 @@ ports:
     visibility: public
     name: VNC
     description: VNC Viewer
-
-
