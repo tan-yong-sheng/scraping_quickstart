@@ -6,9 +6,11 @@
 
 FROM gitpod/workspace-full:latest
 
+RUN pyenv install 3.10 \
+    && pyenv global 3.10
+
 # Install necessary packages
 RUN sudo install-packages \
-        python3.10 \
         python3-pip \
         nodejs \
         npm \
