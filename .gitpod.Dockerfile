@@ -3,6 +3,7 @@
 # Reference: https://www.gitpod.io/docs/configure/workspaces/workspace-image
 # Reference 2: https://simonemms.com/blog/2022/04/30/using-a-non-ubuntu-base-image-in-gitpod
 # Reference 3: https://github.com/gitpod-io/gitpod/issues/7459
+# reminder - need to install chrome on Docker to use Selenium? - https://github.com/omkarcloud/gitpod-selenium
 
 FROM gitpod/workspace-full
 
