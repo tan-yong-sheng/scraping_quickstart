@@ -3,4 +3,8 @@ lxml
 bs4
 selenium
 webdriver-manager
+python-dotenv
 tqdm
+watermark
+seleniumbase
+PyMuPDF
