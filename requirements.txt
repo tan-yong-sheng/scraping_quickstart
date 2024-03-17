@@ -10,3 +10,4 @@ watermark
 seleniumbase
 PyMuPDF
 2captcha-python
+pandas
