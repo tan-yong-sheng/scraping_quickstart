@@ -9,4 +9,4 @@ image:
 
 tasks:
   - init: |
-      cd ./10_deployment/aws_lambda_docker && sudo npm i -g && cd ../..
+      cd ./10_deployment/aws_lambda_docker && npm install && cd ../..
