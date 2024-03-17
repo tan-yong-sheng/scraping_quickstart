@@ -25,6 +25,7 @@ tasks:
   # prevent npm installation error by cache: https://medium.com/@sahumanish327/while-running-command-npm-install-am-getting-error-npm-i-npm-err-d0eeaf6b84ae
   - name: install required javascript libraries for AWS Lambda deployment
     init: |
+      sudo chown -R 33333:33333 "/home/gitpod/.npm"
       cd ./10_deployment/aws_lambda_docker && npm install && cd ../..
 
 ## refer https://gist.github.com/nadvolod/73997a12e646e5c00bafb1b9c12fd7b1
