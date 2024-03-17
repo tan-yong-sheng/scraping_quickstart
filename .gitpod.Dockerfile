@@ -12,7 +12,6 @@ RUN gpg --keyserver keys.openpgp.org --recv-keys BC6B641A9D1AA1277130025ED949710
 RUN sudo install-packages \
         python3.10 \
         python3-pip \
-        nodejs \
         npm \
         git \
         git-lfs \
