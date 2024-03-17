@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { AwsLambdaDocker2Stack } from '../lib/aws_lambda_docker2-stack';
+import { AwsLambdaDockerStack } from '../lib/aws_lambda_docker-stack';
 
 const app = new cdk.App();
-new AwsLambdaDocker2Stack(app, 'AwsLambdaDocker2Stack', {
+new AwsLambdaDockerStack(app, 'AwsLambdaDockerStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */

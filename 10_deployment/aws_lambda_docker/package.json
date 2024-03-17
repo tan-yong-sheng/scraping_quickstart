@@ -1,8 +1,8 @@
 {
-  "name": "aws_lambda_docker2",
+  "name": "aws_lambda_docker",
   "version": "0.1.0",
   "bin": {
-    "aws_lambda_docker2": "bin/aws_lambda_docker2.js"
+    "aws_lambda_docker": "bin/aws_lambda_docker.js"
   },
   "scripts": {
     "build": "tsc",

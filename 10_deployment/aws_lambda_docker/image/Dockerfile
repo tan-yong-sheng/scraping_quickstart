@@ -9,4 +9,4 @@ RUN pip install -r requirements.txt
 # copy all files in ./src
 COPY src/* ${LAMBDA_TASK_ROOT}
 
-CMD ["main.handler"] 
+CMD ["main.handler"]

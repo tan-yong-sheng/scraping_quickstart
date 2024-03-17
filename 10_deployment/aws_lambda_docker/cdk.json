@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/aws_lambda_docker2.ts",
+  "app": "npx ts-node --prefer-ts-exts bin/aws_lambda_docker.ts",
   "watch": {
     "include": [
       "**"

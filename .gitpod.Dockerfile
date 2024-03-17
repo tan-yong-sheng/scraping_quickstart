@@ -26,9 +26,8 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
         && rm -rf awscliv2.zip \
         && rm -rf ./aws
 
-# Install AWS CDK
-RUN npm install -g aws-cdk \
-    && npm install -g aws-cdk-lib
+# Install AWS CDK and aws-cdk-lib module
+RUN npm install -g aws-cdk
 
 # Copy the requirements file into the container
 COPY requirements.txt .
