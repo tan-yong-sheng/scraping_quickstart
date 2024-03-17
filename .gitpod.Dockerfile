@@ -4,7 +4,7 @@
 # Reference 2: https://simonemms.com/blog/2022/04/30/using-a-non-ubuntu-base-image-in-gitpod
 # Reference 3: https://github.com/gitpod-io/gitpod/issues/7459
 
-FROM gitpod/workspace-full:latest
+FROM gitpod/workspace-full
 
 # use python 3.10
 RUN pyenv install 3.10 \
@@ -35,4 +35,4 @@ RUN npm install -g aws-cdk
 # Copy the requirements file into the container
 COPY requirements.txt .
 # Install Python dependencies from requirements.txt
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
