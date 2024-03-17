@@ -1,5 +1,8 @@
 This is a work in progress
 
+
+[![AWS CDK application](https://i.stack.imgur.com/kgE0H.png)](https://stackoverflow.com/questions/67855703/the-difference-between-a-stack-and-construct-in-aws-cdk)
+
 Further Reference:
 
 1. How to Run a Python Docker Image on AWS Lambda https://www.youtube.com/watch?v=wbsbXfkv47A

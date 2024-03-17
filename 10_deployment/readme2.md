@@ -6,6 +6,7 @@ Reference:
 3. Setting Up an AWS CDK Project with Minimum IAM Access: A Step-by-Step Guide https://www.linkedin.com/pulse/setting-up-aws-cdk-project-minimum-iam-access-guide-kundu/
 3. Multi Factor Authentication (MFA) With AWSCLI https://www.youtube.com/watch?v=mNfIh5tUVpg
 
+4. Understand AWS L1, L2, L3 construct https://medium.com/devops-techable/understand-constructs-in-aws-cdk-and-learn-how-to-build-your-first-l3-constructs-for-reusing-your-62e60b9a8da8
 -----
 
 1. Create an Aws user with programmatic access: [https://www.simplified.guide/aws/iam/create-programmatic-access-user](https://www.simplified.guide/aws/iam/create-programmatic-access-user)
