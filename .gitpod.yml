@@ -48,5 +48,5 @@ ports:
 
 vscode:
   extensions:
-    - amazonwebservices.aws-toolkit-vscode
     - ms-python.python
+    - VisualStudioExptTeam.vscodeintellicode@1.2.2:VyaPhtK5JDcrioOPwlZlsw==
