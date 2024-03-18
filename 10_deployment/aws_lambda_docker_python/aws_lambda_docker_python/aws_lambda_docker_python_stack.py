@@ -5,8 +5,7 @@ from aws_cdk import (
     aws_lambda,
     aws_apigateway,
     Duration,
-    LayerVersion,
-    Runtime
+
 )
 from constructs import Construct
 
@@ -33,4 +32,4 @@ class AwsLambdaDockerPythonStack(Stack):
             handler=lambda_function,
         )
 
-        
+
