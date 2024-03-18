@@ -7,5 +7,6 @@ def handler(event, context):
         'headers': {
             'Content-Type': 'text/plain'
         },
-        'body': 'Hello, CDK! You have hit {}\n'.format(event['path'])
+        'body': 'Hello, CDK! You have hit {path}\n {querystring}\n'.format(path = event['path'], 
+                    querystring = event["queryStringParameters"])
     }

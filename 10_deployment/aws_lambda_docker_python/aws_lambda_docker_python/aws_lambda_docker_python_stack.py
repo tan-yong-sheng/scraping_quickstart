@@ -8,14 +8,15 @@ from aws_cdk import (
 )
 from constructs import Construct
 
+
 class AwsLambdaDockerPythonStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        #queue = aws_sqs.Queue(
+        # queue = aws_sqs.Queue(
         #    self, "AwsLambdaDockerPythonQueue",
         #    visibility_timeout=Duration.seconds(300),
-        #)
+        # )
 
         lambda_function = aws_lambda.DockerImageFunction(
             self, "DockerFunc",
@@ -29,7 +30,5 @@ class AwsLambdaDockerPythonStack(Stack):
             self, "Endpoint",
             handler=lambda_function,
         )
-
-
 
         
