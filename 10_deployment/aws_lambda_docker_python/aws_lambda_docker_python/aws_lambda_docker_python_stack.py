@@ -4,7 +4,9 @@ from aws_cdk import (
     # aws_sqs,
     aws_lambda,
     aws_apigateway,
-    Duration
+    Duration,
+    LayerVersion,
+    Runtime
 )
 from constructs import Construct
 
