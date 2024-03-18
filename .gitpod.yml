@@ -49,4 +49,4 @@ ports:
 vscode:
   extensions:
     - ms-python.python
-    - VisualStudioExptTeam.vscodeintellicode@1.2.2:VyaPhtK5JDcrioOPwlZlsw==
+    - VisualStudioExptTeam.vscodeintellicode@1.2.2
