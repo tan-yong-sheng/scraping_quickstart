@@ -9,6 +9,8 @@ Further Reference:
 Reference:
 1. Step 1 - Create an AWS user with programmatic access: https://www.simplified.guide/aws/iam/create-programmatic-access-user
 
+2. AWS CDK Workshop https://cdkworkshop.com/30-python/20-create-project/300-structure.html
+
 2. Step 2 - How to Run a Python Docker Image on AWS Lambda https://www.youtube.com/watch?v=wbsbXfkv47A
 
 3. AWS CDK and Python | Step by Step Tutorial
@@ -63,3 +65,7 @@ However, take note that unzipped package size has to be less than 250MB to deplo
 
 1. Web scraping using AWS Lambda and API Gateway:
 https://www.lucasamos.dev/articles/lambdaapigateway
+
+1. How to Create a FREE Custom Domain Name for Your Lambda URL - A Step by Step Tutorial https://dev.to/omarcloud20/how-to-create-a-free-custom-domain-name-for-your-lambda-url-a-step-by-step-tutorial-47jl
+
+1. Is serverless cheaper for your use case? Find out with this calculator. https://medium.com/serverless-transformation/is-serverless-cheaper-for-your-use-case-find-out-with-this-calculator-2f8a52fc6a68
