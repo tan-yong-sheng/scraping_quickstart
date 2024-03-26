@@ -27,13 +27,11 @@ This repository serves as a comprehensive introduction to web scraping technique
 This repository covers a wide range of topics, including:
 
 1. Scraping with APIs
-2. 
+2. Scraping static website
 3. Handling JavaScript-rendered websites with headless browser
-4. 
-5. Bypassing anti-scraping measures
-6. Proxies and rotating IP addresses to prevent hitting rate limit
-7.
-8. 
+4. Bypassing anti-scraping measures with 2Captcha service
+5. Use Brightdata Proxies to rotate IP addresses to prevent hitting rate limit
+and much more
 
 ## Learning Resources
 For a more in-depth understanding of web scraping techniques, refer to the accompanying blog: [Insert Blog URL]. This blog provides detailed explanations, code samples, and additional resources to complement the Jupyter Notebooks.
