@@ -1,6 +1,3 @@
-I'm(Note: part 8 - ensure scraped_data_quality haven't yet done for all 3 ipynb, especially sqlmodel...
-Perhaps use sqlalchemy is better)
-
 # Scraping Quickstart
 
 This repository serves as a comprehensive introduction to web scraping techniques, suitable for beginners and intermediate Python users. It provides a hands-on learning experience through a series of Jupyter Notebooks, guiding you through various scraping methods.
