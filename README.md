@@ -31,7 +31,8 @@ This repository covers a wide range of topics, including:
 3. Handling JavaScript-rendered websites with headless browser
 4. Bypassing anti-scraping measures with 2Captcha service
 5. Use Brightdata Proxies to rotate IP addresses to prevent hitting rate limit
-and much more
+
+And much more
 
 ## Learning Resources
 For a more in-depth understanding of web scraping techniques, refer to the accompanying blog: [Insert Blog URL]. This blog provides detailed explanations, code samples, and additional resources to complement the Jupyter Notebooks.
