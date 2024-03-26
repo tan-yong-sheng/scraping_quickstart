@@ -1,4 +1,4 @@
-(Note: part 8 - ensure scraped_data_quality haven't yet done for all 3 ipynb, especially sqlmodel...
+I'm(Note: part 8 - ensure scraped_data_quality haven't yet done for all 3 ipynb, especially sqlmodel...
 Perhaps use sqlalchemy is better)
 
 # Scraping Quickstart
@@ -35,7 +35,7 @@ This repository covers a wide range of topics, including:
 And much more
 
 ## Learning Resources
-For a more in-depth understanding of web scraping techniques, refer to the accompanying blog: [Insert Blog URL]. This blog provides detailed explanations, code samples, and additional resources to complement the Jupyter Notebooks.
+For a more in-depth understanding of web scraping techniques, refer to the accompanying blog: [https://tanyongsheng.net/blog/web-scraping-tutorial-with-python-2024-using-python-requests-beautifulsoup-selenium-anti-captcha-and-proxy/](https://tanyongsheng.net/blog/web-scraping-tutorial-with-python-2024-using-python-requests-beautifulsoup-selenium-anti-captcha-and-proxy/). This blog provides detailed explanations, code samples, and additional resources to complement the Jupyter Notebooks.
 
 ## Contributing
 Contributions to this repository are welcome! If you have any suggestions, improvements, or additional examples, please feel free to open a pull request or submit an issue.
